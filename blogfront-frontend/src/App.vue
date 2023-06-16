@@ -1,23 +1,29 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
+
+import {get} from "@/net";
+import {ElMessage} from "element-plus";
+import {useStore} from "@/stores";
+import router from "@/router";
+import {nextTick, provide, ref} from "vue";
+
+const store = useStore()
+
+if (store.auth.user == null) {
+  get('/api/user/me', (message) => {
+    store.auth.user = message
+    // router.push('index')
+  }, () => {
+    store.auth.user = null
+  })
+}
+
+
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <router-view/>
 </template>
 
 <style scoped>
