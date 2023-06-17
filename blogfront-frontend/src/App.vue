@@ -1,9 +1,9 @@
 <script setup>
 
 
-import {get} from "@/net";
+import {get} from '@/net';
 import {ElMessage} from "element-plus";
-import {useStore} from "@/stores";
+import {useStore} from '@/stores';
 import router from "@/router";
 import {nextTick, provide, ref} from "vue";
 

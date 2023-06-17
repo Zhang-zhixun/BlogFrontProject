@@ -8,13 +8,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BlogFrontProject" />
-        <module name="blogfront-backend" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="blogfront-backend (1)" target="17" />
+      <module name="blogfront-backend (2)" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="blogfront-backend" options="-parameters" />
+      <module name="blogfront-backend (1)" options="-parameters" />
+      <module name="blogfront-backend (2)" options="-parameters" />
     </option>
   </component>
 </project>
