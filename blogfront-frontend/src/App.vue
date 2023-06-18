@@ -10,7 +10,7 @@ import {nextTick, provide, ref} from "vue";
 const store = useStore()
 
 if (store.auth.user == null) {
-  get('/api/user/me', (message) => {
+  get('/api/role/me', (message) => {
     store.auth.user = message
     // router.push('index')
   }, () => {

@@ -18,7 +18,29 @@ const router = createRouter({
               }
           },
       ]
-    }
+    },
+      {
+          path: '/login',
+          name: "login",
+          component: () => import('@/views/Login.vue'),
+          children: [
+              {
+                  path: '/login',
+                  name: 'blog-login',
+                  component: () => import('@/components/LoginCom/LoginPage.vue')
+              },
+              {
+                  path: 'register',
+                  name: 'blog-register',
+                  component: () => import('@/components/LoginCom/RegisterPage.vue')
+              },
+              {
+                  path: 'forget',
+                  name: 'blog-forget',
+                  component: () => import('@/components/LoginCom/ForgetPage.vue')
+              }
+          ]
+      },
 
   ]
 })

@@ -1,8 +1,8 @@
 <template>
-
+<BlogHeader/>
   <el-main class="scrollable-content">
     <div style="height: 100vh;">
-      <div style="background-color: rgba(30, 144, 255);height: 100vh;">
+      <div style="background-color: rgba(3,103,229);height: 100vh;">
         <div class="header">
           <div class="inner-header flex"></div>
           <div>
@@ -25,10 +25,10 @@
                   在g元素中使用use元素多次引用了赚钱定义的名为gentle-wave的路径元素
                   通过设置不同的x，y坐标和填充颜色，实现了波浪形状和渐变效果 -->
               <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(30, 144, 255,0.7)"/>
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(30, 144, 255,0.5)"/>
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(30, 144, 255,0.3)"/>
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(30, 144, 255,0.8)"/>
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(3,103,229,0.7)"/>
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(3,103,229,0.5)"/>
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(3,103,229,0.3)"/>
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(3,103,229,0.8)"/>
               </g>
 
             </svg>
@@ -40,7 +40,7 @@
           background-image:-webkit-linear-gradient(left,black,black);
           -webkit-background-clip:text;
           -webkit-text-fill-color:transparent;"
-              class="animate__animated" :class="{animate__rubberBand:true}">行太不灭队博客官网</h1>
+              class="animate__animated" :class="{animate__rubberBand:true}">行太不面对博客官网</h1>
 
         </div>
         <div class="content flex" style="margin-top: 10vh;color: black">
@@ -138,32 +138,62 @@
         </div>
       </div>
 
-      <div class="row" style="height: 50vh;margin-top:20vh">
-        <div class="col-sm-12 mb-3 mb-sm-0">
-          <div class="card" style="border: 0;">
-            <div class="card-body">
-              <el-button class="a animate__animated" href="#" style="font-size:44px;color:white"
-                         :class="{animate__jackInTheBox:true}">进入博客</el-button>
-            </div>
+      <div class="row" style="height: 15vh;margin-top:20vh;text-align: center;padding: 30px;background: #f8f8f8">
+        <footer class="blog-footer">
+          <div class="copyright_info" >
+            <p style="font-size: 13px;color: #999999"><a href="#" target="_blank">京公网安备 11000002000088号</a>
+              <span class="copyright_split"> | </span>
+              <span><a href="//beian.miit.gov.cn" target="_blank">京ICP备11041704号</a></span>
+              <span class="copyright_split"> | </span>
+              <a href="#" rel="noopener noreferrer" target="_blank">ICP</a>
+              <span class="copyright_split"> | </span>
+              <a href="#" target="_blank">互联网药品信息服务资格证编号(京)-经营性-2014-0008</a>
+              <span class="copyright_split"> | </span><span>新出发京零 字第大120007号</span></p>
+            <p style="font-size: 13px;color: #999999"><span>互联网出版许可证编号新出网证(京)字150号</span>
+              <span class="copyright_split"> | </span>
+              <a
+                  href="#"
+                  target="_blank">出版物经营许可证</a><span class="copyright_split"> | </span> <a
+                  href="#"
+                  target="_blank">网络文化经营许可证京网文[2020]6112-1201号</a><span
+                  class="copyright_split"> | </span>
+              <span>违法和不良信息举报电话：4006561155</span>
+            </p>
+            <p style="font-size: 13px;color: #999999">
+              <span class="copyright_text">Copyright © 2004 -
+                <em id="copyright_year">2023</em>
+                惠健康JK.com 版权所有
+              </span>
+              <span class="copyright_split"> | </span><span>消费者维权热线：4006067733</span>
+              <a class="copyright_license" href="#" target="_blank">经营证照</a>
+              <span class="copyright_split"> | </span>
+              <span>(京)网械平台备字(2018)第00003号</span>
+              <span class="copyright_split"> | </span>
+              <a
+                  class="mod_business_license" href="#"
+                  target="_blank">营业执照</a>
+              <span class="copyright_split"> | </span>
+              <a
+                  href="#" rel="noopener noreferrer"
+                  target="_blank">增值电信业务经营许可证</a>
+            </p>
+
+
           </div>
-        </div>
+        </footer>
       </div>
-
-
 
     </div>
 
-
   </el-main>
-
 
 </template>
 
 <script setup>
 
 import {ref, onMounted} from "vue";
-import TypeIt from 'typeit'
-
+import TypeIt from 'typeit';
+import BlogHeader from '@/components/blogIndexCom/blogHeader.vue';
 const text = ref(null)
 const imgURL = ref('@/assets/img/index-bg/img_1.png')
 import AOS from 'aos';
@@ -179,7 +209,7 @@ import {
 
 onMounted(() => {
       new (TypeIt)(text.value, {
-        strings: ["您好！ 欢迎来到行太不灭队博客官网", "我是团队成员@ZhiXun", "请滚动滑轮往下浏览博客模块介绍并点击进入博客主页"],
+        strings: ["您好！ 欢迎来到行太不面对博客官网", "我是团队成员@ZhiXun", "请滚动滑轮往下浏览博客模块介绍"],
         cursorChar: "<span class='cursorChar'>|<span>",//用于光标的字符。HTML也可以
         speed: 120,
         lifeLike: true,// 使打字速度不规则
@@ -223,7 +253,7 @@ p {
 .header {
   position: relative;
   text-align: center;
-  background: linear-gradient(60deg, white 0%, white 100%);
+  background: linear-gradient(180deg, white 0%, white 100%);
   color: white;
 }
 

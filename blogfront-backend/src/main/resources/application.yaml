@@ -4,3 +4,34 @@ spring:
     url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: root
+    #邮箱配置
+  mail:
+    host: smtp.163.com
+    #邮箱
+    username: 17605058037@163.com
+    #这里不是填登录密码，填邮箱的授权码
+    password: VSWVDGFWYLERLTEH
+    port: 465
+    required: true
+    properties:
+      #邮箱地址：
+      from: xxxx@163.com
+      #必须配置，不然有可能不会报错
+      mail:
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+  data:
+    redis:
+      database: 0
+      host: localhost
+      port: 6379
+      required: true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+file:
+  path:/
+server:
+  port: 2223
