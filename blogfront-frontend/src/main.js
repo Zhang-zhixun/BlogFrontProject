@@ -28,5 +28,4 @@ axios.defaults.baseURL = 'http://localhost:2223'
 app.use(createPinia())
 app.use(router)
 app.use($)
-app.use(AOS)
 app.mount('#app')

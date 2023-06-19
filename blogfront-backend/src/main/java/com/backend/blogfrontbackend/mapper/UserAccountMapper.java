@@ -1,6 +1,6 @@
 package com.backend.blogfrontbackend.mapper;
 
-import com.backend.blogfrontbackend.entity.auth.UserAccount;
+import com.backend.blogfrontbackend.entity.user.UserAccount;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

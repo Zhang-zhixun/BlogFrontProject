@@ -11,10 +11,18 @@ const router = createRouter({
       children: [
           {
               path: '/',
-              name: 'blogIndex-main',
+              name: 'blog-index',
               component: () => import('@/components/blogIndexCom/blogMain.vue'),
               meta: {
-                  title : '官网首页'
+                  title : '博客首页'
+              }
+          },
+          {
+              path: '/resources',
+              name: 'blog-Resources',
+              component: () => import('@/components/blogIndexCom/blogResources.vue'),
+              meta: {
+                  title : '资源首页'
               }
           },
       ]

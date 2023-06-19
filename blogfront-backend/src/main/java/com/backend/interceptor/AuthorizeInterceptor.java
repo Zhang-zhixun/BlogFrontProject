@@ -1,7 +1,7 @@
 package com.backend.interceptor;
 
 
-import com.backend.blogfrontbackend.entity.auth.UserAccount;
+import com.backend.blogfrontbackend.entity.user.UserAccount;
 import com.backend.blogfrontbackend.mapper.UserAccountMapper;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;

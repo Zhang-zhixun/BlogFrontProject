@@ -1,6 +1,6 @@
 package com.backend.blogfrontbackend.service;
 
-import com.backend.blogfrontbackend.entity.auth.UserAccount;
+import com.backend.blogfrontbackend.entity.user.UserAccount;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface UserAccountService extends UserDetailsService {

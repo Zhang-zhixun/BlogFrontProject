@@ -1,4 +1,4 @@
-package com.backend.blogfrontbackend.entity.auth;
+package com.backend.blogfrontbackend.entity.user;
 
 
 import lombok.AllArgsConstructor;

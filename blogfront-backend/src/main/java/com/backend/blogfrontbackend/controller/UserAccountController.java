@@ -2,11 +2,16 @@ package com.backend.blogfrontbackend.controller;
 
 
 import com.backend.blogfrontbackend.entity.RestBean;
-import com.backend.blogfrontbackend.entity.auth.UserAccount;
+import com.backend.blogfrontbackend.entity.user.UserAccount;
 import com.backend.blogfrontbackend.service.UserAccountService;
 import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.constraints.Pattern;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -107,6 +112,17 @@ public class UserAccountController {
             return RestBean.failure(500,"内部错误,请联系管理员");
         }
     }
+
+    @RequestMapping("/logout")
+    public RestBean<String> logoutPage (HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("1111");
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null){
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+        }
+        return RestBean.success("登出成功");
+    }
+
 
 
 

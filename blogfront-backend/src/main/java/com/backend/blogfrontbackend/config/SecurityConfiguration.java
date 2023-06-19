@@ -51,10 +51,10 @@ public class SecurityConfiguration {
                 .successHandler(this::onAuthenticationSuccess)
                 //登录失败
                 .failureHandler(this::onAuthenticationFailure)
-                .and()
-                .logout().logoutUrl("/api/user/loginout")
-                //设置权限 登出成功
-                .logoutSuccessHandler(this::onAuthenticationSuccess)
+//                .and()
+//                .logout().logoutUrl("/api/user/logout")
+//                //设置权限 登出成功
+//                .logoutSuccessHandler(this::onAuthenticationSuccess)
                 .and()
                 //记住密码
                 .rememberMe()

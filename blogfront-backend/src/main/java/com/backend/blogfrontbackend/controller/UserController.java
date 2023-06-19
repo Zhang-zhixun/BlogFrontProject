@@ -2,7 +2,7 @@ package com.backend.blogfrontbackend.controller;
 
 
 import com.backend.blogfrontbackend.entity.RestBean;
-import com.backend.blogfrontbackend.entity.auth.UserAccount;
+import com.backend.blogfrontbackend.entity.user.UserAccount;
 import com.backend.blogfrontbackend.service.UserAccountService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;

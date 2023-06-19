@@ -1,6 +1,6 @@
 package com.backend.blogfrontbackend.service.impl;
 
-import com.backend.blogfrontbackend.entity.auth.UserAccount;
+import com.backend.blogfrontbackend.entity.user.UserAccount;
 import com.backend.blogfrontbackend.mapper.UserAccountMapper;
 
 import com.backend.blogfrontbackend.service.UserAccountService;

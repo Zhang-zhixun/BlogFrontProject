@@ -1,6 +1,6 @@
 <template>
   <div style="text-align: center;margin: 0 20px">
-    <el-button @click="router.push('/')" size="large" style="width: 100px;margin-left: 85%" >官网首页</el-button>
+    <el-button @click="router.push('/')" size="large" style="width: 100px;margin-left: 85%" >博客首页</el-button>
     <div style="margin-top: 120px">
       <div style="font-size: 25px"><h3>登录</h3></div>
       <div style="font-size: 15px">进入系统前，请先输入用户名和密码</div>

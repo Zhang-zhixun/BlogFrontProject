@@ -32,6 +32,6 @@ mybatis:
     map-underscore-to-camel-case: true
 
 file:
-  path:/
+  path:/x
 server:
   port: 2223
