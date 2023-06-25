@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor//生成无参构造方法
+@NoArgsConstructor
 @AllArgsConstructor
 public class UserAccount {
     private String userAccountUserName;

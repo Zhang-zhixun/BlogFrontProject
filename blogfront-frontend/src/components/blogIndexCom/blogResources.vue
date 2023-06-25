@@ -68,6 +68,7 @@
 
             <button  v-if="store.auth.user==null" disabled class="btn btn-outline-primary" type="button"
                 style="margin-left:15vw;width:100px;margin-top:5vh;height:5vh;line-height: 5vh">下载资源</button>
+
           </div>
         </div>
       </div>
@@ -149,6 +150,7 @@ import {
   Search,
   Star,
 } from '@element-plus/icons-vue'
+
 const text = ref(null)
 const imgURL = ref('@/assets/img/index-bg/img_1.png')
 const store = useStore()
@@ -156,7 +158,6 @@ let isDisabled = ref(false)
 if (store.auth.user != null) {
   isDisabled = true;
 }
-
 onMounted(() => {
       new (TypeIt)(text.value, {
         strings: ["欢迎进入资源首页！", "您可以选择自己喜欢的模板进行下载", "但请记得登录哦！"],
