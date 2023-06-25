@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BlogFrontProject" />
+        <module name="blogfront-backend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
