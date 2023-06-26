@@ -33,7 +33,7 @@
           <a class="nav-link" href="#">文档</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">博客</a>
+          <a class="nav-link" @click="router.push('/article')">博客</a>
         </li>
         <li class="nav-item">
           <el-dropdown>

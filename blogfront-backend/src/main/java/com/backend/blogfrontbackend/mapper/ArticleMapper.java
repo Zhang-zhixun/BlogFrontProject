@@ -19,6 +19,16 @@ public interface ArticleMapper {
 //    List<Article> findByArticlePage(int startNum,int recordNum);
     //实现文章表和用户表连接查询
     @Select("select * from blog.article,blog.user where article.uid = user.user_id limit #{startNum},#{recordNum}")
+    @Results({
+            @Result(column = "id",property = "id"),
+            @Result(column = "title",property = "title"),
+            @Result(column = "content",property = "content"),
+            @Result(column = "creat",property = "creat"),
+            @Result(column = "uid",property = "uid"),
+            @Result(column = "category",property = "category"),
+            @Result(column = "user_id",property = "user.user_id"),
+            @Result(column = "name",property = "user.name")
+    })
     List<Article> findByArticlePage(int startNum,int recordNum);
 
     //查询分类文章信息，指定起始位置、步长和文章分类
@@ -31,11 +41,31 @@ public interface ArticleMapper {
     List<Article> findByArticleSearch(int startNum,int recordNum,String keyString);
 
     //根据作者id查询文章信息
-    @Select("select * from blog.article where uid = #{uidNum} limit #{startNum},#{recordNum}")
+    @Select("select * from blog.article,blog.user where article.uid = #{uidNum} and article.uid = user.user_id limit #{startNum},#{recordNum}")
+    @Results({
+            @Result(column = "id",property = "id"),
+            @Result(column = "title",property = "title"),
+            @Result(column = "content",property = "content"),
+            @Result(column = "creat",property = "creat"),
+            @Result(column = "uid",property = "uid"),
+            @Result(column = "category",property = "category"),
+            @Result(column = "user_id",property = "user.user_id"),
+            @Result(column = "name",property = "user.name")
+    })
     List<Article> findByArticleAuthorId(int startNum,int recordNum,int uidNum);
-    //根据文章标题查询文章信息
-    @Select("select * from blog.article where title = #{title}")
-    List<Article> findByArticleTitle(String title);
+    //根据文章id查询文章信息
+    @Select("select * from blog.article,blog.user where id = #{aidNum} and article.uid = user.user_id")
+    @Results({
+            @Result(column = "id",property = "id"),
+            @Result(column = "title",property = "title"),
+            @Result(column = "content",property = "content"),
+            @Result(column = "creat",property = "creat"),
+            @Result(column = "uid",property = "uid"),
+            @Result(column = "category",property = "category"),
+            @Result(column = "user_id",property = "user.user_id"),
+            @Result(column = "name",property = "user.name")
+    })
+    List<Article> findByArticleTitle(int aidNum);
 
 
     //添加文章记录

@@ -49,8 +49,8 @@ public class ArticleController {
     }
 
     @PostMapping("/articleTitle")
-    public List<Article> getArticleTitle(@RequestParam("title") String title){
-        return articleMapper.findByArticleTitle(title);
+    public List<Article> getArticleTitle(@RequestParam("aidNum") int aidNum){
+        return articleMapper.findByArticleTitle(aidNum);
     }
 
     @PostMapping("/articleInsert")

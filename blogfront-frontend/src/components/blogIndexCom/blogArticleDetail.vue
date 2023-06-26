@@ -7,7 +7,7 @@
       <!-- 文章发布时间 -->
       <span>发布于：{{itemList.creat}}</span>
       <!-- 文章作者 -->
-      <span>作者：{{itemList.uid}}</span>
+      <span>作者：{{itemList.user.name}}</span>
       <!-- 文章流量信息 -->
 <!--      <span class="glyphicon glyphicon-eye-open">浏览量：</span>-->
 <!--      <span class="glyphicon glyphicon-heart">点赞：</span>-->
@@ -61,7 +61,7 @@
 
 <script setup>
 //引入生命周期函数
-import {onMounted,ref} from "vue";
+import {onMounted, reactive, ref} from "vue";
 //引入路由
 import {useRoute} from "vue-router";
 import axios from "axios";
@@ -73,13 +73,14 @@ const route = useRoute()
 let itemList = ref([])
 
 itemList.value = JSON.parse(route.query.data)
-// console.log(itemList.value)
+console.log("这是从主页传过来的数据")
+console.log(itemList.value)
 
 let uidNum = itemList.value.uid
 let articleList = ref([])
 let startNum = 0
 let recordNum = 5
-let title = itemList.title
+let aidNum = itemList.value.id
 // 根据作者id查询更多文章
 const getArticleByAuthorIdData = () =>{
   axios.request({
@@ -97,24 +98,26 @@ const getArticleByAuthorIdData = () =>{
   return articleList
 }
 articleList = getArticleByAuthorIdData()
-
-//根据文章标题查询文章信息
+console.log('根据作者id查询更多文章')
+console.log(articleList)
+//根据文章id查询文章信息
 const getArticleByTitleData = () =>{
   axios.request({
     method:'POST',
     url:'http://localhost:2223/api/article/articleTitle',
     params:{
-      title: title,
+      aidNum:aidNum,
     },
   }).then(response => {
     itemList.value = response.data[0]
+    console.log("根据文章id查询文章信息")
     console.log(itemList.value)
   })
   return itemList
 }
 
 const otherBtn = (item) => {
-  title = item.title
+  aidNum = item.id
   itemList = getArticleByTitleData()
 }
 
