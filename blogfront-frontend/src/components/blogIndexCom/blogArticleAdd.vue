@@ -1,6 +1,6 @@
 <template>
   <header class="header"></header>
-  <div class="container div1" style="margin-top: 50px;">
+  <div class="container div1" style="margin-top: 36px;">
     <form></form>
     <div class="form-group">
       <label for="title">博客标题<br></label>
@@ -24,10 +24,13 @@
 import router from "@/router";
 import {ref} from "vue";
 import axios from "axios";
+import {useStore} from "@/stores";
 let title = ref("")
 let category = ref("")
 let content = ref("")
 let flag = 0
+const store = useStore()
+console.log(store.auth.user.userAccountUserName)
 
 const getArticleByAddData = () =>{
   axios.request({
@@ -52,16 +55,30 @@ const getArticleByAddData = () =>{
   })
 }
 const submitBtn = () => {
-  getArticleByAddData()
-  console.log(title.value)
+  if(title && category && content){
+    getArticleByAddData()
+  }else{
+    alert('请输入标题、分类和内容')
+    // if(!aidNum){
+    //   alert('')
+    // }else if(!title){
+    //   alert('请输入标题')
+    // }else if(!category){
+    //   alert('请输入分类')
+    // }else if(!content){
+    //   alert('请输入内容')
+    // }else if(!title && !category){
+    //   alert('请输入标题和分类')
+    // }
+  }
 }
 </script>
 
 <style scoped>
 .header{
-  height:50px;
+  height:60px;
 }
 .div1{
-  margin-bottom: -80px;
+  margin-bottom: -110px;
 }
 </style>

@@ -14,10 +14,7 @@ public interface ArticleMapper {
     @Select("select * from blog.article")
     List<Article> findByAllArticle();
 
-    //查询分页文章信息，指定起始记录和步长。
-//    @Select("select * from blog.article limit #{startNum},#{recordNum}")
-//    List<Article> findByArticlePage(int startNum,int recordNum);
-    //实现文章表和用户表连接查询
+    //查询分页文章信息，指定起始记录和步长。实现文章表和用户表连接查询
     @Select("select * from blog.article,blog.user where article.uid = user.user_id limit #{startNum},#{recordNum}")
     @Results({
             @Result(column = "id",property = "id"),
@@ -75,9 +72,9 @@ public interface ArticleMapper {
 
     //修改文章记录
     @Update("update blog.article set title=#{title},content=#{content},category=#{category} where id=#{id}")
-    Article reviseArticle(String title,String content,String category,int id);
+    int updateArticle(int id,String title,String category,String content);
 
     //删除文章记录
     @Delete("delete from blog.article where id=#{id}")
-    void subArticle(int id);
+    int deleteArticle(int id);
 }

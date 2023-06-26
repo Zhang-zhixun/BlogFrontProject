@@ -37,7 +37,7 @@ const router = createRouter({
               name: 'blog-Article-Detail',
               component: () => import('@/components/blogIndexCom/blogArticleDetail.vue'),
               meta: {
-                  title : '博客详情页'
+                  title : '博客详情'
               },
               props:true
           },{
@@ -45,7 +45,23 @@ const router = createRouter({
               name: 'blog-Article-Add',
               component: () => import('@/components/blogIndexCom/blogArticleAdd.vue'),
               meta: {
-                  title : '博客添加'
+                  title : '博客发布'
+              },
+              props:true
+          },{
+              path: '/articleManagement',
+              name: 'blog-Article-Management',
+              component: () => import('@/components/blogIndexCom/blogArticleManagement.vue'),
+              meta: {
+                  title : '博客管理'
+              },
+              props:true
+          },{
+              path: '/articleUpdate',
+              name: 'blog-Article-Update',
+              component: () => import('@/components/blogIndexCom/blogArticleUpdate.vue'),
+              meta: {
+                  title : '博客管理'
               },
               props:true
           },

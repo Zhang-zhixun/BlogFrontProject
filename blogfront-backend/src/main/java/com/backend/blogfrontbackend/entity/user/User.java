@@ -19,5 +19,5 @@ public class User {
     private String school;
     private String identity;
     private String user_account_username;
-    private List<Article> articleList;
+//    private List<Article> articleList;
 }

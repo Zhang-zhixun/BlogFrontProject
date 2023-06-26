@@ -76,7 +76,7 @@
             <h4 class="fst-italic">我的博客</h4>
             <ol class="list-unstyled mb-0">
               <li><a @click="gotoblogArticleAdd()" class="nav-item" style="cursor:pointer">发布博客</a></li>
-              <li><a href="#">管理博客</a></li>
+              <li><a @click="router.push('/articleManagement')" class="nav-item" style="cursor:pointer">管理博客</a></li>
             </ol>
           </div>
 
@@ -301,13 +301,11 @@ const gotoblogArticleAdd = () => {
 }
 
 .div1{
+  margin-top: -50px;
   background: url("@/assets/img/articleimg/article01.png");
-  /*margin-top: 100px;*/
-  /*background-position: center;*/
-  /*  height:100%;*/
-  /*  width:100%;*/
-  /*  background-size:cover;*/
-  /*  position:fixed;*/
+}
+.div2{
+  margin-top: -50px;
 }
 .main1{
   margin-bottom: -80px;

@@ -52,7 +52,7 @@
         </ul>
       </div>
       <nav class="blog-pagination" aria-label="Pagination">
-        <a class="btn btn-outline-primary rounded-pill"  @click="router.push('/article')">返回</a>
+        <a class="btn btn-outline-primary rounded-pill"  @click="gotoHomeOrManage()">返回</a>
       </nav>
     </div>
 <!--    <a class="btn btn-outline-primary rounded-pill"  @click="router.push('/article')">返回</a>-->
@@ -121,6 +121,9 @@ const otherBtn = (item) => {
   itemList = getArticleByTitleData()
 }
 
+const gotoHomeOrManage = () => {
+  console.log(router.back())
+}
 
 </script>
 
